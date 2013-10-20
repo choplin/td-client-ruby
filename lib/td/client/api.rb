@@ -67,7 +67,7 @@ class API
       @base_path = ''
     end
 
-    @http_proxy = opts[:http_proxy] || ENV['HTTP_PROXY']
+    @http_proxy = opts[:http_proxy] || ENV['HTTP_PROXY'] || ENV['http_proxy']
     if @http_proxy
       http_proxy = if @http_proxy =~ /\Ahttp:\/\/(.*)\z/
                      $~[1]
